@@ -7,7 +7,7 @@
     const config = {
         surveyUrl: "https://www.survio.com/survey/d/U1W4V6F5A5K9W0L3B",
         delay: 3000, // 3 sekundy
-        cookieDuration: 1, // 1 den
+        cookieDuration: 3, // 3 dny
         cookieName: 'survioPopupShown'
     };
 
@@ -51,11 +51,12 @@
                 max-width: 800px;
                 height: 80%;
                 background-color: white;
-                border-radius: 5px;
+                border-radius: 5px 5px 5px 5px;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
                 z-index: 1001;
                 display: flex;
                 flex-direction: column;
+                overflow: hidden;
             }
             
             .survio-close-btn {
@@ -97,44 +98,56 @@
                 border: none;
             }
             
+            .survio-cookie-info {
+                width: 100%;
+                text-align: center;
+                padding: 8px;
+                font-size: 11px;
+                color: #777;
+                background-color: #f9f9f9;
+                border-top: 1px solid #eee;
+                border-radius: 0 0 5px 5px;
+            }
+            
             .survio-second-modal {
                 display: none;
                 position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 90%;
-                max-width: 450px;
+                bottom: 20px;
+                right: 20px;
+                width: 300px;
                 background-color: white;
-                padding: 20px;
+                padding: 10px;
                 border-radius: 5px;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
                 z-index: 1002;
                 text-align: center;
                 font-family: "Source Sans Pro", sans-serif !important;
                 color: #3a3a45;
-                font-size: 1.1rem;
+                font-size: 0.9rem;
                 background: #f7f7f7;
+                transition: all 0.3s ease;
             }
             
             .survio-second-modal p {
-                margin-bottom: 20px;
-                line-height: 1.5;
+                margin: 5px 0 10px 0;
+                line-height: 1.4;
             }
             
             .survio-button-container {
                 display: flex;
                 justify-content: center;
-                gap: 15px;
+                gap: 10px;
+                margin-bottom: 5px;
             }
             
             .survio-modal-btn {
-                padding: 10px 15px;
+                padding: 8px 12px;
                 border: none;
                 border-radius: 4px;
                 cursor: pointer;
                 font-weight: bold;
                 transition: background-color 0.3s;
+                font-size: 0.8rem;
             }
             
             .survio-open-btn {
@@ -189,6 +202,11 @@
         iframe.src = config.surveyUrl;
         iframe.title = 'Dotazník';
         
+        // Info o cookies
+        const cookieInfo = document.createElement('div');
+        cookieInfo.className = 'survio-cookie-info';
+        cookieInfo.textContent = 'Zavřením okna se vám uloží cookie, která zajistí, že se vám okno během 3 dnů nezobrazí (více viz GDPR)';
+        
         // Druhé modální okno
         const secondModal = document.createElement('div');
         secondModal.className = 'survio-second-modal';
@@ -196,7 +214,7 @@
         
         // Text v druhém modálním okně
         const modalText = document.createElement('p');
-        modalText.textContent = 'Nechcete si dotazník otevřít v novém okně a vrátit se k němu později?';
+        modalText.textContent = 'Chcete se k dotazníku vrátit později? Otevřete si ho jako záložku v prohlížeči.';
         
         // Kontejner pro tlačítka
         const buttonContainer = document.createElement('div');
@@ -218,6 +236,7 @@
         popupContent.appendChild(iframe);
         popup.appendChild(closeBtn);
         popup.appendChild(popupContent);
+        popup.appendChild(cookieInfo);
         overlay.appendChild(popup);
         
         buttonContainer.appendChild(openBtn);
@@ -240,6 +259,7 @@
         // Zavření pop-up okna a zobrazení druhého modálního okna
         closeBtn.addEventListener('click', function() {
             document.getElementById('survioPopup').style.display = 'none';
+            overlay.style.display = 'none'; // Skrytí tmavého pozadí
             secondModal.style.display = 'block';
         });
         
