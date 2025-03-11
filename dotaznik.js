@@ -162,7 +162,7 @@
             
             .survio-open-btn {
                 background-color: #a2c0ff;
-                color: white;
+                color: #000;
             }
             
             .survio-open-btn:hover {
