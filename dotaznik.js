@@ -28,8 +28,15 @@
         return match ? match[2] : null;
     }
 
+    // Detekce mobilního zařízení
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+    }
+
     // Vytvoření CSS
     function injectStyles() {
+        const isMobileDevice = isMobile();
+        
         const styles = `
             .survio-backdrop {
                 display: none;
@@ -49,7 +56,7 @@
                 transform: translate(-50%, -50%);
                 width: 90%;
                 max-width: 800px;
-                height: 80%;
+                height: ${isMobileDevice ? '92%' : '80%'};
                 background-color: white;
                 border-radius: 5px 5px 5px 5px;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -77,6 +84,8 @@
                 box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
                 z-index: 10;
                 transition: color 0.3s, background-color 0.3s;
+                line-height: 1;
+                padding: 0;
             }
             
             .survio-close-btn:hover {
@@ -114,7 +123,7 @@
                 position: fixed;
                 bottom: 20px;
                 right: 20px;
-                width: 300px;
+                width: ${isMobileDevice ? '85%' : '300px'};
                 background-color: white;
                 padding: 10px;
                 border-radius: 5px;
@@ -126,6 +135,7 @@
                 font-size: 0.9rem;
                 background: #f7f7f7;
                 transition: all 0.3s ease;
+                ${isMobileDevice ? 'left: 50%; transform: translateX(-50%);' : ''}
             }
             
             .survio-second-modal p {
@@ -141,13 +151,13 @@
             }
             
             .survio-modal-btn {
-                padding: 8px 12px;
+                padding: ${isMobileDevice ? '12px' : '8px 12px'};
                 border: none;
                 border-radius: 4px;
                 cursor: pointer;
                 font-weight: bold;
                 transition: background-color 0.3s;
-                font-size: 0.8rem;
+                font-size: ${isMobileDevice ? '1rem' : '0.8rem'};
             }
             
             .survio-open-btn {
@@ -214,7 +224,7 @@
         
         // Text v druhém modálním okně
         const modalText = document.createElement('p');
-        modalText.textContent = 'Chcete se k dotazníku vrátit později a pomoci nám zlepšit Fakta o klimatu? Otevřete si jej v novém okně v prohlížeči.';
+        modalText.textContent = 'Chcete se k dotazníku vrátit později a pomoci nám zlepšit Fakta o klimatu? Otevřete si jej v novém okně v prohlížeči..';
         
         // Kontejner pro tlačítka
         const buttonContainer = document.createElement('div');
