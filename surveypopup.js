@@ -8,7 +8,7 @@
         surveyUrl: "https://www.survio.com/survey/d/U1W4V6F5A5K9W0L3B",
         delay: 3000, // 3 sekundy
         cookieDuration: 3, // 3 dny
-        cookieName: 'survioPopupShown'
+        cookieName: 'sv_form_seen'
     };
 
     // Funkce pro nastavení cookie
@@ -31,7 +31,7 @@
     // Vytvoření CSS
     function injectStyles() {
         const styles = `
-            .survio-overlay {
+            .survio-backdrop {
                 display: none;
                 position: fixed;
                 top: 0;
@@ -42,7 +42,7 @@
                 z-index: 1000;
             }
             
-            .survio-popup {
+            .survio-dialog {
                 position: fixed;
                 top: 50%;
                 left: 50%;
@@ -179,13 +179,13 @@
     function createElements() {
         // Overlay
         const overlay = document.createElement('div');
-        overlay.className = 'survio-overlay';
-        overlay.id = 'survioOverlay';
+        overlay.className = 'survio-backdrop';
+        overlay.id = 'survioBackdrop';
         
         // Hlavní popup
         const popup = document.createElement('div');
-        popup.className = 'survio-popup';
-        popup.id = 'survioPopup';
+        popup.className = 'survio-dialog';
+        popup.id = 'survioDialog';
         
         // Tlačítko pro zavření
         const closeBtn = document.createElement('button');
@@ -250,7 +250,7 @@
 
     // Přidání event listenerů
     function setupEventListeners() {
-        const overlay = document.getElementById('survioOverlay');
+        const overlay = document.getElementById('survioBackdrop');
         const closeBtn = document.getElementById('survioCloseBtn');
         const secondModal = document.getElementById('survioSecondModal');
         const openNewWindow = document.getElementById('survioOpenNewWindow');
@@ -258,7 +258,7 @@
         
         // Zavření pop-up okna a zobrazení druhého modálního okna
         closeBtn.addEventListener('click', function() {
-            document.getElementById('survioPopup').style.display = 'none';
+            document.getElementById('survioDialog').style.display = 'none';
             overlay.style.display = 'none'; // Skrytí tmavého pozadí
             secondModal.style.display = 'block';
         });
@@ -291,7 +291,7 @@
             
             // Zobrazení pop-up okna po nastaveném zpoždění
             setTimeout(function() {
-                document.getElementById('survioOverlay').style.display = 'block';
+                document.getElementById('survioBackdrop').style.display = 'block';
             }, config.delay);
         }
     }
