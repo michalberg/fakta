@@ -1,6 +1,6 @@
 /**
- * Survio Pop-up Script
- * Skript pro vytvoření pop-up okna s formulářem Survio
+ * Skript pro zobrazení dotazníku Survio
+ * Skript obsahuje cookie, která zaručí, že se po zavření okna okno 3 dny uživateli neukáže
  */
 (function() {
     // Konfigurace
