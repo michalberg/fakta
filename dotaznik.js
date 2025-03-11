@@ -224,7 +224,7 @@
         
         // Text v druhém modálním okně
         const modalText = document.createElement('p');
-        modalText.textContent = 'Chcete se k dotazníku vrátit později a pomoci nám zlepšit Fakta o klimatu? Otevřete si jej v novém okně v prohlížeči..';
+        modalText.textContent = 'Chcete vyplnit dotazník později? Otevřete si jej v novém okně.';
         
         // Kontejner pro tlačítka
         const buttonContainer = document.createElement('div');
