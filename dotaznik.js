@@ -1,6 +1,6 @@
 /**
- * Skript pro zobrazení dotazníku Survio
- * Skript obsahuje cookie, která zaručí, že se po zavření okna okno 3 dny uživateli neukáže
+ * Survio Pop-up Script
+ * Skript pro vytvoření pop-up okna s formulářem Survio
  */
 (function() {
     // Konfigurace
@@ -214,7 +214,7 @@
         
         // Text v druhém modálním okně
         const modalText = document.createElement('p');
-        modalText.textContent = 'Chcete se k dotazníku vrátit později? Otevřete si ho jako záložku v prohlížeči.';
+        modalText.textContent = 'Chcete se k dotazníku vrátit později? Otevřete si jej v novém okně v prohlížeči.';
         
         // Kontejner pro tlačítka
         const buttonContainer = document.createElement('div');
