@@ -161,7 +161,7 @@
             }
             
             .survio-open-btn {
-                background-color: #4CAF50;
+                background-color: #a2c0ff;
                 color: white;
             }
             
