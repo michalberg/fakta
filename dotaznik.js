@@ -12,7 +12,7 @@
         cookieDuration: 3, // 3 dny - pro sv_form_dismissed - okno se nezobrazí 3 dny po zavření
         completedCookieDuration: 30, // 30 dní - pro sv_form_completed - nic se nezobrazí po dokončení dotazníku
         shownCookieDuration: 3, // 3 dny - pro sv_form_shown - zobrazí se jen malé okno, pokud není zavřeno
-        completionTime: 3 * 60 * 1000, // 3 minuty v milisekundách - čas pro detekci dokončení vyplňování dotazníku
+        completionTime: 2 * 60 * 1000, // 2 minuty v milisekundách - čas pro detekci dokončení vyplňování dotazníku
         cookieName: 'sv_form_dismissed',
         completedCookieName: 'sv_form_completed',
         shownCookieName: 'sv_form_shown'
