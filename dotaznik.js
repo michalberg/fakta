@@ -114,6 +114,7 @@
                 background-color: #f9f9f9;
                 border-top: 1px solid #eee;
                 border-radius: 0 0 5px 5px;
+                font-family: "Source Sans Pro", sans-serif !important;
             }
 
             .survio-second-modal {
