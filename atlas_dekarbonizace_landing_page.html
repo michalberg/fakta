@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="klima, změna klimatu, dekarbonizace, atlas">
+    <meta property="og:site_name" content="Fakta o klimatu">
+    <meta property="og:url" content="https://faktaoklimatu.cz/atlas-dekarbonizace-ceska">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Atlas Dekarbonizace Česka">
+    <meta name="twitter:title" content="Atlas Dekarbonizace Česka">
+    <meta name="description" content="Klimatická změna je jedním z velkých globálních rizik. Proměna světa, která spočívá v odklonu od fosilních paliv, už začala. Součástí tohoto měnícího se světa je i Česko a na tom, jak tyto změny zvládne, závisí také jeho další prosperita.">
+    <meta property="og:description" content="Klimatická změna je jedním z velkých globálních rizik. Proměna světa, která spočívá v odklonu od fosilních paliv, už začala. Součástí tohoto měnícího se světa je i Česko a na tom, jak tyto změny zvládne, závisí také jeho další prosperita.">
+    <meta name="twitter:description" content="Klimatická změna je jedním z velkých globálních rizik. Proměna světa, která spočívá v odklonu od fosilních paliv, už začala. Součástí tohoto měnícího se světa je i Česko a na tom, jak tyto změny zvládne, závisí také jeho další prosperita.">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Atlas Dekarbonizace Česka</title>
+    <script src="/assets-local/website-analytics.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link href="https://faktaoklimatu.cz/assets/css/main.css?1758287738" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous"/>
+    <link rel="icon" type="image/png" href="https://faktaoklimatu.cz/assets-local/favicon.png">
+    <style>
+        .atlas-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .atlas-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+			color:#fff;
+        }
+
+        .hero-subtitle {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .hero-highlight {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .hero-book {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-book img {
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-book img:hover {
+            transform: perspective(1000px) rotateY(-10deg) rotateX(2deg) scale(1.05);
+        }
+
+        .atlas-section {
+            padding: 60px 0;
+        }
+
+        .atlas-section-alt {
+            background: #f8fafc;
+        }
+
+        .atlas-section-title {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1e293b;
+        }
+
+        .atlas-description-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .atlas-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .atlas-text h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
+        .atlas-points {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .atlas-points li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.05em;
+        }
+
+        .atlas-points li::before {
+            content: '→';
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-right: 12px;
+            margin-top: -3px;
+        }
+
+        .goals-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .goals-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .atlas-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .carousel-item {
+            display: none;
+            padding: 10px;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .atlas-page-preview {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+            background: white;
+        }
+
+        .atlas-page-preview:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+
+        .atlas-page-preview img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            display: block;
+            max-height: none;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+            user-select: none;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: #3b82f6;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 30px 0 20px 0;
+        }
+
+        .atlas-btn {
+            font-family: 'Source Sans Pro', sans-serif;
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin: 8px;
+        }
+
+        .atlas-btn-primary {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .atlas-btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+
+        .atlas-btn-secondary {
+            background: white;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+
+        .atlas-btn-secondary:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1em;
+        }
+
+        .course-section {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .course-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-title {
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .course-description {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .course-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 30px;
+        }
+
+        .course-points {
+            list-style: none;
+            margin: 0;
+        }
+
+        .course-points li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.05em;
+        }
+
+        .course-points li::before {
+            content: '→';
+            color: #a7f3d0;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-right: 12px;
+            margin-top: -3px;
+        }
+
+        .video-embed {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .video-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .ambassador-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 240px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #777;
+        }
+
+        .ambassador-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .ambassador-photo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            margin: 0 auto 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ambassador-photo::after {
+            content: '👤';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+        }
+
+        .ambassador-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #777;
+        }
+
+        .ambassador-role {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .ambassadors-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .ambassadors-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .ambassadors-carousel .carousel-item {
+            display: block;
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+        }
+
+        .testimonials-section {
+            background: white;
+        }
+
+        .testimonial {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.05em;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-author {
+            margin-top: 12px;
+            font-weight: 600;
+            font-style: normal;
+            color: #1e293b;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .eu-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .eu-logos img {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+        }
+
+        .hidden-sections {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .atlas-content-grid,
+            .course-content-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ambassadors-carousel {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5em;
+            }
+            
+            .atlas-section-title {
+                font-size: 2em;
+            }
+            
+            .atlas-description-card,
+            .course-description {
+                padding: 30px 20px;
+            }
+
+            .atlas-carousel {
+                padding-left: 20px;
+            }
+
+            .ambassador-card {
+                width: 200px;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+      <div id="nav-container" class="container">
+        <a class="navbar-brand" href="https://faktaoklimatu.cz/"><img src="https://faktaoklimatu.cz/assets-local/logo-navbar.svg" alt="Fakta o klimatu"></a>
+        <div id="navbar-buttons">
+          <div class="filler"></div>
+          <button id="searchShow" class="btn btn-sm btn-outline-secondary" type="button" aria-label="Vyhledávání">
+            <i class="fas fa-search"></i>
+            <span class="d-none">Téma, klíčové slovo, …</span>
+          </button>
+          <button id="toggler" class="btn btn-sm btn-outline-secondary" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Zobrazit/skrýt navigaci">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="dropdown">
+              <div class="nav-link dropdown-toggle" id="dropdown_témata" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Témata
+              </div>
+              <div class="dropdown-menu" aria-labelledby="dropdown_témata">
+                <a class="dropdown-item" href="https://faktaoklimatu.cz/temata/klimaticka-zmena">Klimatická změna</a>
+                <a class="dropdown-item" href="https://faktaoklimatu.cz/temata/emise">Emise skleníkových plynů</a>
+                <a class="dropdown-item" href="https://faktaoklimatu.cz/temata/energetika">Energetika</a>
+                <a class="dropdown-item" href="https://faktaoklimatu.cz/temata/ekonomika">Ekonomika</a>
+                <a class="dropdown-item" href="https://faktaoklimatu.cz/temata/dohody-legislativa">Mezinárodní dohody a legislativa</a>
+                <a class="dropdown-item" href="https://faktaoklimatu.cz/temata/krajina-ekosystemy">Krajina a ekosystémy</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <div class="nav-link dropdown-toggle" id="dropdown_další-materiály" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Další materiály
+              </div>
+              <div class="dropdown-menu" aria-labelledby="dropdown_další-materiály">
+                <a class="ext-link dropdown-item " href="https://2050podcast.cz/" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-headphones mr-1"></i> Podcast 2050</a>
+                <a class="dropdown-item " href="https://faktaoklimatu.cz/publikace"><i class="fas fa-fw fa-book mr-1"></i> Naše publikace</a>
+                <a class="dropdown-item " href="https://faktaoklimatu.cz/modelovani-energeticke-transformace"><i class="fas fa-fw fa-chart-area mr-1"></i> Modelování energetiky</a>
+                <a class="dropdown-item " href="#newsletter-modal" id="newsletter-embed" data-toggle="modal" data-target="#newsletter-modal"><i class="fas fa-fw fa-envelope-open-text mr-1"></i> Odebírejte newsletter</a>
+                <a class="dropdown-item " href="https://faktaoklimatu.cz/slovnik"><i class="fas fa-fw fa-rectangle-list mr-1"></i> Slovník pojmů</a>
+              </div>
+            </li>
+            <li><a class="nav-link " href="https://faktaoklimatu.cz/o-nas">O nás</a></li>
+            <li><a class="ext-link nav-link no-ext-link-icon" href="https://twitter.com/faktaoklimatu" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-x-twitter"></i></a></li>
+            <li><a id="fundraising" class="ext-link nav-link no-ext-link-icon btn btn-primary" href="https://www.darujme.cz/projekt/1203742?utm_source=web_obecny_cz&amp;utm_medium=web&amp;utm_campaign=general_2025" target="_blank" rel="noopener noreferrer"><i class="d-md-none d-lg-inline fas fa-fw fa-heart"></i> Podpořte nás</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="search-container" class="container">
+        <form id="searchbox-form">
+          <i id="searchboxIcon" class="fas fa-search"></i>
+          <input class="form-control me-2" id="searchbox" data-bs-toggle="dropdown" type="search" placeholder="Téma, klíčové slovo, …" aria-label="Téma, klíčové slovo, …" autocomplete="off">
+          <button id="searchHide" class="btn btn-sm btn-outline-secondary" type="button" aria-label="Zrušit" tabindex="-1">
+            <i class="fas fa-fw fa-times"></i>
+          </button>
+        </form>
+        <div id="omnisearch-suggestions-container">
+          <div class="dropdown-menu" id="omnisearch-suggestions" aria-labelledby="searchbox">
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="atlas-hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="hero-title">Atlas Dekarbonizace Česka</h1>
+              <p class="hero-subtitle">
+                Klimatická změna je jedním z velkých globálních rizik. Proměna světa, která spočívá v odklonu od fosilních paliv, už začala. Součástí tohoto měnícího se světa je i Česko a na tom, jak tyto změny zvládne, závisí také jeho další prosperita. Čekají nás nelehké diskuze a kroky, při kterých se může hodit mapa terénu, do něhož vstupujeme.
+              </p>
+              <p class="hero-highlight">
+                <strong>A právě proto vznikl Atlas dekarbonizace Česka</strong>
+              </p>
+            </div>
+            <div class="hero-book">
+              <img src="https://uc8ec5870bd7a3ee7c392e43b535.previews.dropboxusercontent.com/p/thumb/ACz_ixinf2_DJRHmnFOY9fnui75rSCZzCRhGLyC_mifCzE-McKiqAY_p7Vre2b1OnNc0nXk_pxYCvsBEjNHFhiFeSZVJF7mmkZdBLeziJf9K2gHh8bREcJVNvYzDr2LqcT7FVxJd_3SDuGAfhJ0r32x-BJgvB77J8QMjnP6MSlvDT0b_eJS7bW0JQlNFJhzt0b2kYUTMV57jUgble2VBYBid8flSjVaN2UVYn-YVP0ej9n13gvKY7-2-6BGNJtFrLHd3zBwpdc2Ks1usRIBniSrHolxRKIn92kzeWIDAUvOKGNEUxrLlCBb_znIdP3ldcomxqcuic9-QFGlbE4Vprw8-Mc8uPLJIiCX9dQc1EiMXfcJ8Vg8iPTGDJXDoqEnE80-x2U9hSCEoFTjDKMJcgnI7/p.png?is_prewarmed=true" alt="Atlas Dekarbonizace Česka - kniha">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Atlas Description Section -->
+      <section class="atlas-section">
+        <div class="container">
+          <div class="atlas-description-card">
+            <div class="atlas-content-grid">
+              <div class="atlas-text">
+                <h2>Atlas dekarbonizace Česka je praktická publikace, která:</h2>
+                
+                <ul class="atlas-points">
+                  <li>Mapuje zdroje emisí skleníkových plynů v České republice a možnosti jejich snižování</li>
+                  <li>Představuje reálné technologie a postupy pro dosažení téměř nulových emisí při zachování prosperity</li>
+                  <li>Vysvětluje klíčové koncepty a souvislosti dekarbonizace v přístupné formě za použití infografik, vizualizací a ilustrací</li>
+                </ul>
+
+                <div class="goals-section">
+                  <h3 class="goals-title">Cíle a přínos publikace:</h3>
+                  <ul class="atlas-points">
+                    <li>Posunout společenskou debatu od hledání překážek k hledání řešení</li>
+                    <li>Ukázat, ve kterých sektorech lze dosáhnout největšího efektu při snižování emisí</li>
+                    <li>Být inspirací pro další kroky v oblasti dekarbonizace založené na datech a reálných možnostech</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="atlas-preview">
+                <div class="carousel-container">
+                  <div class="atlas-carousel" id="atlas-carousel">
+                    <button class="carousel-nav carousel-prev" onclick="changeSlide(-1)">‹</button>
+                    <button class="carousel-nav carousel-next" onclick="changeSlide(1)">›</button>
+                    
+                    <div class="carousel-item active">
+                      <div class="atlas-page-preview">
+                        <img src="https://uc337889bc202bebb74667f5120d.previews.dropboxusercontent.com/p/thumb/ACx8yKo1CA-Tn7E7OP4f_CG6gugYmI28le2HJLtb6Gh2pyGXY6voY_tWHJWsp7XT65YEPzcrg59qlBdGj3CjYPYVN3c2ganuGY98Xe1PD7-6k97cwXxphw9NslHQzNZG5yE46eCoIfT5Hkvy2kjtkfjJqlphBgr-2COB3Kb9X_LR1bApBYS7hwN1vMtNXcJgWfR5PgW8oW9X74yUC7nowPOzLKGrLojqWY5DeE3Tkg8IThBFH_tl84bs-S8hJR8uf4t_bN3FYFdF0hB0c9E2YZkkAMFpMjEsO5H-9nYrfGF41P3m294O6_Egys83j5y1MR2MsOBH12pNTAANjdAlOR41bncH1T-DoFLCo24r9o3oZtGcGHg_oz3pXDNF0RH_N2YeXTfecTNGFQi7cTaLwxlm/p.png?is_prewarmed=true" alt="Větrné elektrárny - stránka z Atlasu">
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="atlas-page-preview">
+                        <img src="https://uce580b9da7b47f5ebebfbfab959.previews.dropboxusercontent.com/p/thumb/ACxP7cDVoU-LQaKbIudOSYPw999upjVAslXMZNls8l5SWjwc6vqJGdlZ7YqzZ0ZKlh7Nhm8PlDDp4-B9NFP_wuHRSA9ROkxecP1_fckUj4_rAgXmax1E0nEIDgIUv7xLXkI1736Mn08zgcMMKEzWuI9GCAmkG5aCHiBPLJjvs05m3rHmt2Gqk6yQyByv5kcpnU_X-RdP7aTRFXBQ6zpO8at--ACXtMiIrnHoy0fF3vaBWAKkGxw-XF0jY38mDmQVnterxh2DtCZ697STRTXMaAzaRUr4ZdwcQDutfbM4cxvHkhlmqBJDaBfnLVOdDQx5vnXp4M1VUUCnaQ0Hk1NbdoHgv5YX36R5RXdvXj9JpPc8on4T7kmY-cZNSH_TaUHkdSlTXhCQnUwEc8-f8O3xBVRx/p.png?is_prewarmed=true" alt="Energetický mix - stránka z Atlasu">
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="atlas-page-preview">
+                        <img src="https://ucec88f92c5d41d0cb207469e9f5.previews.dropboxusercontent.com/p/thumb/ACwXz3VQaL5LoEDTW_FWNFaylMI0Ux6wJQvKxXmfIEaFpum46A8GCze91WUxdCh_ur7U8MgI8uSK55sxjs5WYA1rsLj3p_TVs9zTRXEavnL73-34FbFfepPwWS-vVyqRlfeZK1OwDitG85pCn_70B4XbItfY0nGGOyZm8MOr5SegzYOGGgQ0ynEG9v2WzZ17NuwuLU1Nl6pVJDKxwteaibossRyxzfhoejOpu4_rlkxxhqkJDsaBmgy1xfSX62-o5sPNYyGtKea75Y23aSaesiP5kmkNy4oAmj_XZDWGioQQ9lskkxtsAEOs7c8XPjIWgXjTcxnddCYTmw2jsLStwm9bI_d5Jny2drtU37nXxLtZyrbih2wSKtEOp14NWdXlXo8mxDl5VyyS78Ba4td8HvnU/p.png?is_prewarmed=true" alt="Centrální teplo - stránka z Atlasu">
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="atlas-page-preview">
+                        <img src="https://uc3221e28d7c199e9357779ea2f0.previews.dropboxusercontent.com/p/thumb/ACwQ3nUFMm5Z1NSEC53NKDuXn9WfDFXNzK8KtKwu-fQ8wxLnZZKukQm9Bgoo0pJgtz8KfDLxYoga3-8-9S2nVEvRa_KpjRsEKc1D7rfbOi-A6viJMEugx1lO-FpwnNOq5tAC5RonXegxuomPhRXI4xAoRQww-_Ba7-OQomEQClr4N9SrtvS91fj2T6c7XA2crOKavevrzSprVWBIi3AWdEz3L0jl8m8uzVWaLOj5X59zZ_zur2oUCcGBGQAAIDanvTH8PE65PgiufeXksVY6Ogg56y_Xmk6rFq-gi_W95KlmBrqacbDDB63tHGBIfXHxf1FFzms8cpjsoNDVS7JOKWQyc2s6BOYHMbc7CFSeXMxvbDBvjEO5F9Fgho9-JqnfKvtwgARF8EMZfFfysvMcnkRG/p.png?is_prewarmed=true" alt="Spotřeba energie - stránka z Atlasu">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-dots">
+                    <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+                    <div class="carousel-dot" onclick="goToSlide(1)"></div>
+                    <div class="carousel-dot" onclick="goToSlide(2)"></div>
+                    <div class="carousel-dot" onclick="goToSlide(3)"></div>
+                  </div>
+                </div>
+                
+                <div class="download-section">
+                  <a href="#" class="atlas-btn atlas-btn-primary">Stáhnout Atlas v PDF</a>
+                </div>
+
+                <div class="contact-info">
+                  <strong>Chcete Atlas v tištěné podobě?</strong><br>
+                  Napište si na <a href="mailto:atlas@faktaoklimatu.cz" style="color: #3b82f6;">atlas@faktaoklimatu.cz</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Online Course Section -->
+      <section class="atlas-section course-section">
+        <div class="container">
+          <div class="course-content">
+            <h2 class="atlas-section-title course-title">Online kurz Dekarbonizujeme Česko</h2>
+            
+            <div class="course-description">
+              <div class="course-content-grid">
+                <div>
+                  <ul class="course-points">
+                    <li>Zaměřuje se na konkrétní řešení pro snižování emisí v Česku</li>
+                    <li>Využívá atraktivní a interaktivní formu výuky</li>
+                    <li>Poskytuje praktické informace a nástroje pro pochopení dekarbonizace</li>
+                    <li>Ukazuje reálné možnosti, jak jednotlivci i organizace mohou přispět k ochraně klimatu</li>
+                    <li>Certifikát po absolvování kurzu</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/EYYD5kEZr4k" 
+                            title="Dekarbonizujeme Česko - trailer kurzu" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                  </div>
+                </div>
+              </div>
+
+              <div style="text-align: center; margin-top: 30px;">
+                <a href="https://www.dekarbonizujemecesko.cz" class="atlas-btn atlas-btn-secondary" target="_blank">
+                  Otevřít kurz → dekarbonizujemecesko.cz
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ambassadors Section -->
+      <section class="atlas-section atlas-section-alt">
+        <div class="container">
+          <h2 class="atlas-section-title" style="color:#777">Ambasadoři Atlasu (zatím nepoužijeme)</h2>
+          <div class="ambassadors-carousel">
+            <div class="ambassadors-item">
+              <div class="ambassador-card">
+                <div class="ambassador-photo"></div>
+                <div class="ambassador-name">První Ambasador</div>
+                <div class="ambassador-role">Profese / Organizace</div>
+              </div>
+            </div>
+            <div class="ambassadors-item">
+              <div class="ambassador-card">
+                <div class="ambassador-photo"></div>
+                <div class="ambassador-name">Druhý Ambasador</div>
+                <div class="ambassador-role">Profese / Organizace</div>
+              </div>
+            </div>
+            <div class="ambassadors-item">
+              <div class="ambassador-card">
+                <div class="ambassador-photo"></div>
+                <div class="ambassador-name">Třetí Ambasador</div>
+                <div class="ambassador-role">Profese / Organizace</div>
+              </div>
+            </div>
+            <div class="ambassadors-item">
+              <div class="ambassador-card">
+                <div class="ambassador-photo"></div>
+                <div class="ambassador-name">Čtvrtý Ambasador</div>
+                <div class="ambassador-role">Profese / Organizace</div>
+              </div>
+            </div>
+            <!-- Pátý ambasador skrytý za scrollem -->
+            <div class="ambassadors-item">
+              <div class="ambassador-card">
+                <div class="ambassador-photo"></div>
+                <div class="ambassador-name">Pátý Ambasador</div>
+                <div class="ambassador-role">Skrytý / Rezerva</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hidden Future Sections -->
+      <div class="hidden-sections">
+        <!-- Testimonials Section -->
+        <section class="atlas-section testimonials-section">
+          <div class="container">
+            <h2 class="atlas-section-title">Řekli o Atlasu a kurzu (zatím nepoužijeme)</h2>
+            <div class="testimonials-grid">
+              <div>
+                <h3 style="margin-bottom: 20px; font-size: 1.5em; color: #1e293b;">O Atlasu</h3>
+                <div class="testimonial">
+                  "Atlas dekarbonizace je výjimečná publikace, která srozumitelně vysvětluje komplexní téma klimatické změny a nabízí konkrétní řešení."
+                  <div class="testimonial-author">— Jméno, Pozice</div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 style="margin-bottom: 20px; font-size: 1.5em; color: #1e293b;">O kurzu</h3>
+                <div class="testimonial">
+                  "Online kurz mi pomohl pochopit, jak mohu ve své organizaci přispět k dekarbonizaci. Interaktivní forma výuky je velmi poutavá."
+                  <div class="testimonial-author">— Jméno, Pozice</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- EU Funding Section -->
+      <section class="atlas-section" style="background: #f8fafc; border-top: 1px solid #e2e8f0;">
+        <div class="container">
+          <div class="text-center">
+            <p style="font-size: 1.2em; margin-bottom: 30px; color: #1e293b; font-weight: 600;">
+              <strong>Tento projekt je financován Evropskou unií v rámci Národního plánu obnovy.</strong>
+            </p>
+            
+            <div class="eu-logos">
+              <img src="https://ucdb3f787edc0e19e9626d7db548.previews.dropboxusercontent.com/p/thumb/ACyXBDeN6oOxtqxBkM3SCn0KvvactU44sUiuh9MUppPfb3Y338zVuBlNiYU7gutAkh31g1SdOd2-47GPMAa7a3eo_DQo0rLM5kwty91G_VTYZzH-79eCERo7mCJBatRaClowH7Y4ZxdMeLsDv6PTHkaZpUGm8ESZvbcTw7E9TCqH8MqweZMNF9nVI-SQfzNpdSbjdUC8BqeNBNqyMFd9JkERL96S1S1FV7N_qDqSQvYdimdCZCoLhG8S957rIcAc2YG4-3fH0dhNJIuaGlbgt-ziMdYST6Rql_LPmIzRcwrev2NzEX6VAWVklRqYzk2a6B_vbLVPSLmAd6wyCt_7jBKxcuh7NPxnREq5zoEVVUXAf4egMQqQcq8qo1X-ABoGlIemfWr9BAzK7OQKFQcb9Aju/p.png?is_prewarmed=true" alt="EU financování - NextGenerationEU, Národní plán obnovy, Ministerstvo životního prostředí" style="max-width: 100%; height: auto; border-radius: 8px;">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 mt-3 text-md-center">
+            <h3>Sledujte nás také na sociálních sítích</h3>
+            <ul class="social justify-content-md-center">
+              <li><a class="ext-link no-ext-link-icon" href="https://twitter.com/faktaoklimatu" target="_blank" rel="noopener noreferrer">
+                  <span class="fab fa-square-x-twitter"></span></a></li>
+              <li><a class="ext-link no-ext-link-icon" href="https://facebook.com/faktaoklimatu" target="_blank" rel="noopener noreferrer">
+                  <span class="fab fa-facebook-square"></span></a></li>
+              <li><a class="ext-link no-ext-link-icon" href="https://www.linkedin.com/company/68480136" target="_blank" rel="noopener noreferrer">
+                  <span class="fab fa-linkedin"></span></a></li>
+              <li><a class="ext-link no-ext-link-icon" href="https://www.instagram.com/faktaoklimatu" target="_blank" rel="noopener noreferrer">
+                  <span class="fab fa-instagram-square"></span></a></li>
+              <li><a class="ext-link no-ext-link-icon" href="https://www.threads.net/@faktaoklimatu" target="_blank" rel="noopener noreferrer">
+                  <span class="fab fa-square-threads"></span></a></li>
+              <li><a class="ext-link no-ext-link-icon" href="https://www.youtube.com/channel/UCpW-nPyjH68BUfAjzhk7O_Q" target="_blank" rel="noopener noreferrer">
+                  <span class="fab fa-youtube"></span></a></li>
+            </ul>
+            <a href="https://www.darujme.cz/projekt/1203742?utm_source=web_obecny_cz&amp;utm_medium=web&amp;utm_campaign=general_2025" class="ext-link btn btn-outline-secondary d-md-none" target="_blank" rel="noopener noreferrer"><i class="fas fa-fw fa-heart"></i> Podpořte nás</a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mt-3 pl-md-5">
+            <a class="no-ext-link-icon" href="https://faktaoklimatu.cz/o-nas#kontaktni-udaje"><span class="fas fa-fw fa-address-card"></span> Kontaktní a fakturační údaje</a><br>
+            <a class="no-ext-link-icon" href="https://faktaoklimatu.cz/jak-pouzivat"><span class="fas fa-fw fa-redo"></span> Jak používat naše materiály</a><br>
+            <a class="no-ext-link-icon" href="https://faktaoklimatu.cz/zdroje"><span class="fas fa-fw fa-bookmark"></span> Další zdroje a odkazy</a><br>
+            <a href="https://faktaoklimatu.cz/gdpr"><span class="fas fa-fw fa-file-contract"></span> Zásady zpracování osobních údajů</a><br>
+            <a class="ext-link no-ext-link-icon" href="https://github.com/faktaoklimatu/web-cz/" target="_blank" rel="noopener noreferrer"><span class="fab fa-fw fa-github"></span> faktaoklimatu/web-cz</a><br>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mt-3 text-md-center">
+            <div class="dropdown mb-2">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="langMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img class="flag" alt="Čeština" src="https://faktaoklimatu.cz/assets/flags/cs.svg">Čeština
+              </button>
+              <div class="dropdown-menu" aria-labelledby="langMenuButton">
+                <a class="ext-link dropdown-item no-ext-link-icon" href="https://faktyoklime.sk" target="_blank" rel="noopener noreferrer"><img class="flag" alt="Slovenčina" src="https://faktaoklimatu.cz/assets/flags/sk.svg">Slovenčina</a>
+                <a class="ext-link dropdown-item no-ext-link-icon" href="https://factsonclimate.org" target="_blank" rel="noopener noreferrer"><img class="flag" alt="English" src="https://faktaoklimatu.cz/assets/flags/en.svg">English</a>
+              </div>
+            </div>
+            © 2025
+            <a href="https://faktaoklimatu.cz/o-nas#kontaktni-udaje">Otevřená data o klimatu, z. ú.</a>
+            <br>
+            <a href="https://creativecommons.org/licenses/by/4.0/deed.cs" title="Creative Commons Uveďte původ 4.0 Mezinárodní" rel="noopener noreferrer" target="_blank" class="ext-link">CC BY 4.0</a><br>
+            <a class="no-ext-link-icon" href="mailto:info@faktaoklimatu.cz">info@faktaoklimatu.cz</a><br>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js" integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js" integrity="sha512-KnvCNMwWBGCfxdOtUpEtYgoM59HHgjHnsVGSxxgz7QH1DYeURk+am9p3J+gsOevfE29DV0V+/Dd52ykTKxN5fA==" crossorigin="anonymous"></script>
+    <script src="https://faktaoklimatu.cz/assets/js/search.js"></script>
+    <script src="https://faktaoklimatu.cz/assets/js/navbar.js"></script>
+    <script src="https://faktaoklimatu.cz/assets/js/main.js"></script>
+
+    <script>
+        let currentSlide = 0;
+        let slides, dots, totalSlides;
+
+        function initCarousel() {
+            slides = document.querySelectorAll('#atlas-carousel .carousel-item');
+            dots = document.querySelectorAll('.carousel-dot');
+            totalSlides = slides.length;
+            
+            if (slides.length > 0) {
+                showSlide(0);
+            }
+        }
+
+        function showSlide(index) {
+            if (!slides || !dots) return;
+            
+            // Hide all slides and deactivate dots
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show current slide and activate dot
+            if (slides[index]) {
+                slides[index].classList.add('active');
+            }
+            if (dots[index]) {
+                dots[index].classList.add('active');
+            }
+        }
+
+        function changeSlide(direction) {
+            if (!slides) return;
+            
+            currentSlide += direction;
+            
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+            
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCarousel);
+        } else {
+            initCarousel();
+        }
+
+        // Auto-advance carousel every 5 seconds
+        setInterval(() => {
+            if (slides && slides.length > 1) {
+                changeSlide(1);
+            }
+        }, 5000);
+    </script>
+
+    <div class="modal fade" id="newsletter-modal" tabindex="-1" role="dialog" aria-label="Přihlášení k newsletteru Fakta o klimatu" aria-hidden="true" data-newsletter-id="9-54057be166928eb6fcc57504dc847797">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <div id="f-9-54057be166928eb6fcc57504dc847797"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
