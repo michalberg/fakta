@@ -6,7 +6,7 @@
     <title>Atlas dekarbonizace Česka | Fakta o klimatu</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Atlas dekarbonizace Česka - Landing Page v1.2 - 2025-01-02 */
+        /* Atlas dekarbonizace Česka - Landing Page v1.4 - 2025-01-02 */
         
         * {
             margin: 0;
@@ -51,7 +51,7 @@
         .hero {
             background: linear-gradient(135deg, #006C90 0%, #0091B8 100%);
             color: white;
-            padding: 80px 20px 200px 20px;
+            padding: 80px 20px 250px 20px;
             position: relative;
             overflow: visible;
         }
@@ -97,17 +97,14 @@
 
         .hero-image {
             position: relative;
-            perspective: 1000px;
             z-index: 10;
-            margin-bottom: -150px;
+            margin-bottom: -200px;
         }
 
         .hero-image img {
             width: 100%;
             max-width: 600px;
             height: auto;
-            transform: rotateY(-15deg) rotateX(5deg);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
             position: relative;
             z-index: 5;
         }
@@ -115,7 +112,7 @@
         /* Features Section */
         .features {
             background: #E5F5FA;
-            padding: 80px 20px;
+            padding: 200px 20px 80px 20px;
             position: relative;
             z-index: 1;
         }
@@ -444,7 +441,11 @@
         /* Responsive */
         @media (max-width: 968px) {
             .hero {
-                padding: 80px 20px 150px 20px;
+                padding: 80px 20px 200px 20px;
+            }
+
+            .features {
+                padding: 150px 20px 80px 20px;
             }
 
             .hero-content,
@@ -464,10 +465,13 @@
             }
 
             .hero-image img {
-                transform: none;
                 max-width: 400px;
                 margin: 0 auto;
                 display: block;
+            }
+
+            .hero-image {
+                margin-bottom: -100px;
             }
 
             .online-badge-float {
@@ -487,7 +491,11 @@
 
         @media (max-width: 640px) {
             .hero {
-                padding: 50px 20px 120px 20px;
+                padding: 50px 20px 80px 20px;
+            }
+
+            .hero-image {
+                margin-bottom: -80px;
             }
 
             .hero-text h1 {
