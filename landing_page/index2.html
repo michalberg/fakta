@@ -6,7 +6,7 @@
     <title>Atlas dekarbonizace Česka | Fakta o klimatu</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Atlas dekarbonizace Česka - Landing Page v2.0 - 2025-01-02 */
+        /* Atlas dekarbonizace Česka - Landing Page v2.1 - 2025-01-02 */
         
         * {
             margin: 0;
@@ -80,17 +80,6 @@
             font-size: 1.1rem;
             margin-bottom: 30px;
             line-height: 1.6;
-        }
-
-        .print-info {
-            font-size: 0.9rem;
-            margin-top: 15px;
-            opacity: 0.95;
-        }
-
-        .print-info a {
-            color: white;
-            text-decoration: underline;
         }
 
         .btn-primary {
@@ -269,27 +258,31 @@
         }
 
         .cta-box {
-            background: #E5F5FA;
-            padding: 25px;
+            background: #006C90;
+            padding: 30px;
             border-radius: 8px;
             margin-top: 30px;
+            text-align: center;
         }
 
         .cta-box .btn-primary {
-            display: block;
-            text-align: center;
+            display: inline-block;
             margin-bottom: 20px;
+            background: white;
+            color: #003d52;
+            padding: 15px 40px;
+            font-size: 1.1rem;
         }
 
-        .cta-box h4 {
-            color: #006C90;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+        .cta-box-text {
+            color: white;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
-        .cta-box a {
-            color: #006C90;
-            text-decoration: none;
+        .cta-box-text a {
+            color: white;
+            text-decoration: underline;
             font-weight: 600;
         }
 
@@ -606,7 +599,6 @@
                 <h1>Atlas dekarbonizace Česka</h1>
                 <p>Publikace zaměřuje debatu na řešení, ukazuje sektory s největším potenciálem pro snížení emisí a inspiruje k dalším krokům v daty podložené dekarbonizaci.</p>
                 <a href="https://faktaoklimatu.cz/atlas-dekarbonizace" class="btn-primary">Stáhnout Atlas v PDF</a>
-                <p class="print-info">Chcete tištěnou verzi? Napište na <a href="mailto:atlas@faktaoklimatu.cz">atlas@faktaoklimatu.cz</a></p>
             </div>
             
             <div class="hero-image">
@@ -656,7 +648,7 @@
                         <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_038.png" alt="Náhled stránky 38" onclick="openLightbox(4)">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_050.png" alt="Náhled stránky 50" onclick="openLightbox(5)">
+                        <img src="https://michalberg.github.io/fakta/landing_page/assets/onl ine-atlas-dekarbonizace-ceska_Page_050.png" alt="Náhled stránky 50" onclick="openLightbox(5)">
                     </div>
                     <div class="carousel-slide">
                         <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_079.png" alt="Náhled stránky 79" onclick="openLightbox(6)">
@@ -697,8 +689,7 @@
 
                 <div class="cta-box">
                     <a href="https://faktaoklimatu.cz/atlas-dekarbonizace" class="btn-primary">Stáhnout Atlas v PDF</a>
-                    <h4>Chcete Atlas v tištěné podobě?</h4>
-                    <p>Napište si na <a href="mailto:atlas@faktaoklimatu.cz">atlas@faktaoklimatu.cz</a></p>
+                    <p class="cta-box-text">Chcete Atlas v tištěné podobě? Napište na <a href="mailto:atlas@faktaoklimatu.cz">atlas@faktaoklimatu.cz</a></p>
                 </div>
             </div>
         </div>
@@ -784,7 +775,7 @@
             dots[currentSlide].classList.add('active');
         }
 
-        // Auto-advance carousel - změněno na 3 sekundy
+        // Auto-advance carousel - 3 sekundy
         setInterval(() => {
             goToSlide((currentSlide + 1) % slides.length);
         }, 3000);
