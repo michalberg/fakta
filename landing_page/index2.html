@@ -6,7 +6,7 @@
     <title>Atlas dekarbonizace Česka | Fakta o klimatu</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Atlas dekarbonizace Česka - Landing Page v1.9 - 2025-01-02 */
+        /* Atlas dekarbonizace Česka - Landing Page v2.0 - 2025-01-02 */
         
         * {
             margin: 0;
@@ -82,13 +82,24 @@
             line-height: 1.6;
         }
 
+        .print-info {
+            font-size: 0.9rem;
+            margin-top: 15px;
+            opacity: 0.95;
+        }
+
+        .print-info a {
+            color: white;
+            text-decoration: underline;
+        }
+
         .btn-primary {
             display: inline-block;
             background: white;
-            color: #006C90;
+            color: #003d52;
             padding: 15px 35px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             border-radius: 5px;
             transition: all 0.3s;
             font-size: 1rem;
@@ -184,11 +195,13 @@
         .carousel-slide {
             display: none;
             cursor: pointer;
-            transition: opacity 0.5s;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
 
         .carousel-slide.active {
             display: block;
+            opacity: 1;
         }
 
         .carousel-slide img {
@@ -262,6 +275,12 @@
             margin-top: 30px;
         }
 
+        .cta-box .btn-primary {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         .cta-box h4 {
             color: #006C90;
             font-size: 1.2rem;
@@ -320,10 +339,10 @@
         .btn-secondary {
             display: inline-block;
             background: white;
-            color: #14B8A6;
+            color: #0d7a6e;
             padding: 15px 35px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             border-radius: 5px;
             transition: all 0.3s;
         }
@@ -505,8 +524,12 @@
         }
 
         @media (max-width: 640px) {
+            .online-badge-float {
+                display: none;
+            }
+
             .hero {
-                padding: 30px 20px 30px 20px;
+                padding: 30px 20px 20px 20px;
             }
 
             .hero-text h1 {
@@ -520,7 +543,7 @@
             }
 
             .hero-image {
-                margin-bottom: -120px;
+                margin-bottom: -80px;
             }
 
             .hero-image img {
@@ -528,7 +551,7 @@
             }
 
             .features {
-                padding: 140px 20px 30px 20px;
+                padding: 100px 20px 30px 20px;
             }
 
             .features-grid {
@@ -583,6 +606,7 @@
                 <h1>Atlas dekarbonizace Česka</h1>
                 <p>Publikace zaměřuje debatu na řešení, ukazuje sektory s největším potenciálem pro snížení emisí a inspiruje k dalším krokům v daty podložené dekarbonizaci.</p>
                 <a href="https://faktaoklimatu.cz/atlas-dekarbonizace" class="btn-primary">Stáhnout Atlas v PDF</a>
+                <p class="print-info">Chcete tištěnou verzi? Napište na <a href="mailto:atlas@faktaoklimatu.cz">atlas@faktaoklimatu.cz</a></p>
             </div>
             
             <div class="hero-image">
@@ -672,6 +696,7 @@
                 </div>
 
                 <div class="cta-box">
+                    <a href="https://faktaoklimatu.cz/atlas-dekarbonizace" class="btn-primary">Stáhnout Atlas v PDF</a>
                     <h4>Chcete Atlas v tištěné podobě?</h4>
                     <p>Napište si na <a href="mailto:atlas@faktaoklimatu.cz">atlas@faktaoklimatu.cz</a></p>
                 </div>
@@ -759,10 +784,10 @@
             dots[currentSlide].classList.add('active');
         }
 
-        // Auto-advance carousel
+        // Auto-advance carousel - změněno na 3 sekundy
         setInterval(() => {
             goToSlide((currentSlide + 1) % slides.length);
-        }, 5000);
+        }, 3000);
 
         // Lightbox functionality
         const lightboxImages = [
