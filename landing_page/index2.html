@@ -6,7 +6,7 @@
     <title>Atlas dekarbonizace Česka | Fakta o klimatu</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Atlas dekarbonizace Česka - Landing Page v1.0 - 2025-01-02 */
+        /* Atlas dekarbonizace Česka - Landing Page v1.1 - 2025-01-02 */
         
         * {
             margin: 0;
@@ -51,9 +51,9 @@
         .hero {
             background: linear-gradient(135deg, #006C90 0%, #0091B8 100%);
             color: white;
-            padding: 80px 20px;
+            padding: 80px 20px 200px 20px;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .hero-content {
@@ -98,20 +98,25 @@
         .hero-image {
             position: relative;
             perspective: 1000px;
+            z-index: 10;
         }
 
         .hero-image img {
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
             height: auto;
             transform: rotateY(-15deg) rotateX(5deg);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 5;
         }
 
         /* Features Section */
         .features {
             background: #E5F5FA;
             padding: 80px 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .features-grid {
@@ -437,6 +442,10 @@
 
         /* Responsive */
         @media (max-width: 968px) {
+            .hero {
+                padding: 80px 20px 150px 20px;
+            }
+
             .hero-content,
             .preview-container,
             .course-content {
@@ -477,7 +486,7 @@
 
         @media (max-width: 640px) {
             .hero {
-                padding: 50px 20px;
+                padding: 50px 20px 120px 20px;
             }
 
             .hero-text h1 {
@@ -509,7 +518,7 @@
 <body>
     <!-- Floating Online Badge -->
     <a href="https://www.dekarbonizujemecesko.cz/" target="_blank" class="online-badge-float">
-        <img src="https://michalberg.github.io/fakta/landing_page/assets/badge-online-kurz.svg" alt="Online kurz">
+        <img src="https://michalberg.github.io/fakta/landing_page/assets/badge-online-kurz.png" alt="Online kurz">
     </a>
 
     <!-- Hero Section -->
