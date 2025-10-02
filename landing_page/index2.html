@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas dekarbonizace Česka | Fakta o klimatu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #006C90 0%, #0091B8 100%);
+            color: white;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: white;
+            color: #006C90;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            transform: rotateY(-15deg) rotateX(5deg);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .online-badge {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            z-index: 10;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px;
+        }
+
+        /* Features Section */
+        .features {
+            background: #E5F5FA;
+            padding: 80px 20px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+        }
+
+        .feature-card h3 {
+            color: #006C90;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Preview Section */
+        .preview-section {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .preview-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .carousel-container {
+            position: relative;
+            background: white;
+            border: 3px solid #E5F5FA;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .carousel-slide {
+            display: none;
+            cursor: pointer;
+            transition: opacity 0.5s;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: #006C90;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        .preview-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .stat-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #006C90;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .cta-box {
+            background: #E5F5FA;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .cta-box h4 {
+            color: #006C90;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .cta-box a {
+            color: #006C90;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Online Course Section */
+        .online-course {
+            background: #14B8A6;
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .course-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .course-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .course-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .course-features li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .course-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: white;
+            color: #14B8A6;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0 10px;
+        }
+
+        .lightbox-close:hover {
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content,
+            .preview-container,
+            .course-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-image img {
+                transform: none;
+                max-width: 400px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .online-badge {
+                width: 80px;
+                height: 80px;
+                top: 0;
+                right: 0;
+            }
+
+            .course-text h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .features,
+            .preview-section,
+            .online-course {
+                padding: 50px 20px;
+            }
+
+            .stat-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .course-features li {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://michalberg.github.io/fakta/landing_page/assets/logo.svg" alt="Fakta o klimatu" class="logo">
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Atlas dekarbonizace Česka</h1>
+                <p>Publikace zaměřuje debatu na řešení, ukazuje sektory s největším potenciálem pro snížení emisí a inspiruje k dalším krokům v daty podložené dekarbonizaci.</p>
+                <a href="https://faktaoklimatu.cz/atlas-dekarbonizace" class="btn-primary">Stáhnout Atlas v PDF</a>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://michalberg.github.io/fakta/landing_page/assets/badge-online-kurz.svg" alt="Online kurz" class="online-badge">
+                <img src="https://michalberg.github.io/fakta/landing_page/assets/publikace-mock-up.png" alt="Atlas dekarbonizace Česka">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="https://michalberg.github.io/fakta/landing_page/assets/ilustrace-mapa.svg" alt="Emise" class="feature-icon">
+                <h3>Mapuje zdroje emisí skleníkových plynů</h3>
+                <p>v Česku a možnosti jejich snižování.</p>
+            </div>
+            
+            <div class="feature-card">
+                <img src="https://michalberg.github.io/fakta/landing_page/assets/ilustrace-technologie.svg" alt="Budovy" class="feature-icon">
+                <h3>Představuje reálné technologie a postupy</h3>
+                <p>pro dosažení téměř nulových emisí při zachování prosperity.</p>
+            </div>
+            
+            <div class="feature-card">
+                <img src="https://michalberg.github.io/fakta/landing_page/assets/ilustrace-koncepty.svg" alt="Infografiky" class="feature-icon">
+                <h3>Vysvětluje klíčové koncepty a souvislosti</h3>
+                <p>dekarbonizace v přístupné podobě za použití infografik, vizualizací a ilustrací.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section class="preview-section">
+        <div class="preview-container">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide active">
+                        <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_009.png" alt="Náhled stránky 9" onclick="openLightbox(0)">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_025.png" alt="Náhled stránky 25" onclick="openLightbox(1)">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_028.png" alt="Náhled stránky 28" onclick="openLightbox(2)">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_037.png" alt="Náhled stránky 37" onclick="openLightbox(3)">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_038.png" alt="Náhled stránky 38" onclick="openLightbox(4)">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_050.png" alt="Náhled stránky 50" onclick="openLightbox(5)">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_079.png" alt="Náhled stránky 79" onclick="openLightbox(6)">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-dot active" onclick="goToSlide(0)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(1)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(2)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(3)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(4)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(5)"></button>
+                    <button class="carousel-dot" onclick="goToSlide(6)"></button>
+                </div>
+            </div>
+
+            <div class="preview-stats">
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <div class="stat-number">240</div>
+                    </div>
+                    <div class="stat-label">stran</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <div class="stat-number">10</div>
+                    </div>
+                    <div class="stat-label">kapitol</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <div class="stat-number">42</div>
+                    </div>
+                    <div class="stat-label">infografik</div>
+                </div>
+
+                <div class="cta-box">
+                    <h4>Chcete Atlas v tištěné podobě?</h4>
+                    <p>Napište si na <a href="mailto:info@faktaoklimatu.cz">info@faktaoklimatu.cz</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Course Section -->
+    <section class="online-course">
+        <div class="course-content">
+            <div class="course-text">
+                <h2>Dekarbonizujeme Česko</h2>
+                <p class="course-subtitle">ONLINE KURZ</p>
+                
+                <ul class="course-features">
+                    <li>Obsahu je 10 hodin studia, 11 lekcí, 80 aktivit a animací</li>
+                    <li>Mezi formáty najdete videa, grafiky a interaktivní úlohy</li>
+                    <li>Dokážete rozčlenit emise podle aktivit od lidí, které chcete navštívit</li>
+                    <li>Najdete si v dekarbonizaci své vlastní místo</li>
+                    <li>Obdržíte certifikát o absolvování</li>
+                </ul>
+
+                <a href="https://faktaoklimatu.cz/kurz-dekarbonizace" class="btn-secondary">Otevřít kurz</a>
+            </div>
+
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="Dekarbonizujeme Česko" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" src="" alt="Náhled">
+        </div>
+    </div>
+
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function goToSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            currentSlide = n;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        // Auto-advance carousel
+        setInterval(() => {
+            goToSlide((currentSlide + 1) % slides.length);
+        }, 5000);
+
+        // Lightbox functionality
+        const lightboxImages = [
+            'https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_009.png',
+            'https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_025.png',
+            'https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_028.png',
+            'https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_037.png',
+            'https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_038.png',
+            'https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_050.png',
+            'https://michalberg.github.io/fakta/landing_page/assets/online-atlas-dekarbonizace-ceska_Page_079.png'
+        ];
+
+        function openLightbox(index) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = lightboxImages[index];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
